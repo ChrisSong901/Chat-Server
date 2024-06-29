@@ -5,7 +5,7 @@
 #include<unordered_map>
 #include<muduo/net/TcpConnection.h>
 #include<functional>
-
+#include"usermodel.hpp"
 #include"json.hpp"
 
 using namespace muduo;
@@ -33,6 +33,8 @@ private:
     Chatservice &operator=(const Chatservice &) = delete;
 
     unordered_map<int, MsgHandler> _msgHandlerMap;
+
+    UserModel usermodel;
 };
 
 #endif

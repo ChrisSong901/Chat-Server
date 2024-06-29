@@ -1,7 +1,8 @@
 src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
- /mychat/src/server/chatservice.cpp /usr/include/stdc-predef.h \
- /mychat/include/server/chatservice.hpp /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/type_traits \
+ /Chat-Server/Chat-Server/src/server/chatservice.cpp \
+ /usr/include/stdc-predef.h \
+ /Chat-Server/Chat-Server/include/server/chatservice.hpp \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/type_traits \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -234,7 +235,9 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/boost/cstdint.hpp /usr/include/boost/core/demangle.hpp \
  /usr/include/c++/11/cxxabi.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h \
- /mychat/thirdpart/json.hpp /usr/include/c++/11/cassert \
+ /Chat-Server/Chat-Server/include/usermodel.hpp \
+ /Chat-Server/Chat-Server/include/server/user.hpp \
+ /Chat-Server/Chat-Server/thirdpart/json.hpp /usr/include/c++/11/cassert \
  /usr/include/c++/11/ciso646 /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h \
  /usr/include/c++/11/pstl/glue_numeric_defs.h \
@@ -282,5 +285,6 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
  /usr/include/c++/11/bits/ostream.tcc \
- /usr/include/c++/11/bits/istream.tcc /mychat/include/public.hpp \
+ /usr/include/c++/11/bits/istream.tcc \
+ /Chat-Server/Chat-Server/include/public.hpp \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h

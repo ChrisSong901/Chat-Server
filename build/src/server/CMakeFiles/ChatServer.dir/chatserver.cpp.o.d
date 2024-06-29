@@ -1,7 +1,9 @@
 src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
- /mychat/src/server/chatserver.cpp /usr/include/stdc-predef.h \
- /mychat/include/server/chatserver.hpp /usr/include/muduo/net/TcpServer.h \
- /usr/include/muduo/base/Atomic.h /usr/include/muduo/base/noncopyable.h \
+ /Chat-Server/Chat-Server/src/server/chatserver.cpp \
+ /usr/include/stdc-predef.h \
+ /Chat-Server/Chat-Server/include/server/chatserver.hpp \
+ /usr/include/muduo/net/TcpServer.h /usr/include/muduo/base/Atomic.h \
+ /usr/include/muduo/base/noncopyable.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -239,9 +241,10 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/11/bits/stl_multimap.h \
  /usr/include/muduo/net/EventLoop.h /usr/include/c++/11/atomic \
  /usr/include/muduo/base/Mutex.h /usr/include/muduo/base/CurrentThread.h \
- /usr/include/muduo/net/TimerId.h /mychat/thirdpart/json.hpp \
- /usr/include/c++/11/cassert /usr/include/c++/11/ciso646 \
- /usr/include/c++/11/numeric /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/muduo/net/TimerId.h \
+ /Chat-Server/Chat-Server/thirdpart/json.hpp /usr/include/c++/11/cassert \
+ /usr/include/c++/11/ciso646 /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
  /usr/include/c++/11/pstl/glue_numeric_defs.h \
  /usr/include/c++/11/forward_list /usr/include/c++/11/bits/forward_list.h \
  /usr/include/c++/11/bits/forward_list.tcc /usr/include/c++/11/valarray \
@@ -286,4 +289,8 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
- /mychat/include/server/chatservice.hpp /usr/include/c++/11/iostream
+ /Chat-Server/Chat-Server/include/server/chatservice.hpp \
+ /Chat-Server/Chat-Server/include/usermodel.hpp \
+ /Chat-Server/Chat-Server/include/server/user.hpp \
+ /usr/include/c++/11/iostream /usr/include/muduo/base/Logging.h \
+ /usr/include/muduo/base/LogStream.h

@@ -1,4 +1,4 @@
-# Install script for directory: /mychat/src/server
+# Install script for directory: /Chat-Server/Chat-Server/src/server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

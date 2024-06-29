@@ -4,6 +4,7 @@
 #include <iostream>
 #include <functional>
 #include <string>
+#include"muduo/base/Logging.h"
 using namespace std;
 using namespace placeholders;
 using json = nlohmann::json;
@@ -37,5 +38,6 @@ void ChatServer::onMessage(const TcpConnectionPtr &conn, // 连接
     string buf = buffer->retrieveAllAsString();
     json js = json::parse(buf);
     auto msgHandler= Chatservice::instance()->getHandler(js["msgid"].get<int>());
-    msgHandler(conn,js,time);
+    LOG_INFO << "begining!";
+    msgHandler(conn, js, time);
 }

@@ -7,12 +7,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/mychat/CMakeLists.txt"
+  "/Chat-Server/Chat-Server/CMakeLists.txt"
   "CMakeFiles/3.29.0-rc3/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.0-rc3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.0-rc3/CMakeSystem.cmake"
-  "/mychat/src/CMakeLists.txt"
-  "/mychat/src/server/CMakeLists.txt"
+  "/Chat-Server/Chat-Server/src/CMakeLists.txt"
+  "/Chat-Server/Chat-Server/src/server/CMakeLists.txt"
   "/usr/local/share/cmake-3.29/Modules/CMakeCCompiler.cmake.in"
   "/usr/local/share/cmake-3.29/Modules/CMakeCCompilerABI.c"
   "/usr/local/share/cmake-3.29/Modules/CMakeCInformation.cmake"

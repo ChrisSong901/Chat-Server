@@ -1,4 +1,4 @@
-# Install script for directory: /mychat/src
+# Install script for directory: /Chat-Server/Chat-Server/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mychat/build/src/server/cmake_install.cmake")
+  include("/Chat-Server/Chat-Server/build/src/server/cmake_install.cmake")
 
 endif()
 
