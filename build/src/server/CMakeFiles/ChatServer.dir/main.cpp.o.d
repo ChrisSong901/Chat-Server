@@ -242,8 +242,8 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: \
  /usr/include/muduo/base/Mutex.h /usr/include/muduo/base/CurrentThread.h \
  /usr/include/muduo/net/TimerId.h \
  /Chat-Server/Chat-Server/include/server/chatservice.hpp \
- /Chat-Server/Chat-Server/include/server/usermodel.hpp \
- /Chat-Server/Chat-Server/include/server/user.hpp \
+ /Chat-Server/Chat-Server/include/server/model/usermodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/user.hpp \
  /Chat-Server/Chat-Server/thirdpart/json.hpp /usr/include/c++/11/cassert \
  /usr/include/c++/11/ciso646 /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h \
@@ -295,11 +295,14 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
- /Chat-Server/Chat-Server/include/server/offlinemessagemodel.hpp \
- /Chat-Server/Chat-Server/include/server/friendmodel.hpp \
- /Chat-Server/Chat-Server/include/server/group.hpp \
- /Chat-Server/Chat-Server/include/server/group_user.hpp \
- /Chat-Server/Chat-Server/include/server/group_model.hpp \
+ /Chat-Server/Chat-Server/include/server/model/offlinemessagemodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/friendmodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/friendmodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group_user.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group_user.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group_model.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group.hpp \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h \
  /usr/include/c++/11/iostream /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \

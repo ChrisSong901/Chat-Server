@@ -290,17 +290,20 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
  /Chat-Server/Chat-Server/include/server/chatservice.hpp \
- /Chat-Server/Chat-Server/include/server/usermodel.hpp \
- /Chat-Server/Chat-Server/include/server/user.hpp \
+ /Chat-Server/Chat-Server/include/server/model/usermodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/user.hpp \
  /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
- /Chat-Server/Chat-Server/include/server/offlinemessagemodel.hpp \
- /Chat-Server/Chat-Server/include/server/friendmodel.hpp \
- /Chat-Server/Chat-Server/include/server/group.hpp \
- /Chat-Server/Chat-Server/include/server/group_user.hpp \
- /Chat-Server/Chat-Server/include/server/group_model.hpp \
+ /Chat-Server/Chat-Server/include/server/model/offlinemessagemodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/friendmodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/friendmodel.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group_user.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group_user.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group_model.hpp \
+ /Chat-Server/Chat-Server/include/server/model/group.hpp \
  /usr/include/c++/11/iostream /usr/include/muduo/base/Logging.h \
  /usr/include/muduo/base/LogStream.h
