@@ -1,7 +1,7 @@
 src/server/CMakeFiles/ChatServer.dir/usermodel.cpp.o: \
  /Chat-Server/Chat-Server/src/server/usermodel.cpp \
  /usr/include/stdc-predef.h \
- /Chat-Server/Chat-Server/include/usermodel.hpp \
+ /Chat-Server/Chat-Server/include/server/usermodel.hpp \
  /Chat-Server/Chat-Server/include/server/user.hpp \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

@@ -1,0 +1,11 @@
+telnet 127.0.0.1 6000
+
+{"msgid":1,"id":1,"password":"123456"}
+{"msgid":1,"id":3,"password":"123amd"}
+
+
+{"msgid":5,"id":1,"name":"zhang san","to":3,"msg":"hello"}
+
+{"msgid":5,"id":1,"name":"zhang san","to":3,"msg":"hello world!!!!!!!!!!!!!!!!!!!!"}
+
+{"msgid":6,"id":1,"friendid":3}

@@ -7,7 +7,12 @@ enum EnMsgType
     LOGIN_MSG_ACK,
     REG_MSG,//注册
     REG_MSG_ACK,
-    ONE_CHAT_MSG
+    ONE_CHAT_MSG,
+    ADD_FRIEND_MSG,
+
+    CREATE_GROUP_MSG,//创建群聊
+    ADD_GROUP_MSG,//添加群聊
+    GROUP_CHAT_MSG,//群组聊天
 };
 /*
 msgid

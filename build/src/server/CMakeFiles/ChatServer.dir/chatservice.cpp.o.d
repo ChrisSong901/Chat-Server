@@ -235,7 +235,7 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/boost/cstdint.hpp /usr/include/boost/core/demangle.hpp \
  /usr/include/c++/11/cxxabi.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h \
- /Chat-Server/Chat-Server/include/usermodel.hpp \
+ /Chat-Server/Chat-Server/include/server/usermodel.hpp \
  /Chat-Server/Chat-Server/include/server/user.hpp \
  /Chat-Server/Chat-Server/thirdpart/json.hpp /usr/include/c++/11/cassert \
  /usr/include/c++/11/ciso646 /usr/include/c++/11/numeric \
@@ -290,5 +290,11 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
+ /Chat-Server/Chat-Server/include/server/offlinemessagemodel.hpp \
+ /Chat-Server/Chat-Server/include/server/friendmodel.hpp \
+ /Chat-Server/Chat-Server/include/server/group.hpp \
+ /Chat-Server/Chat-Server/include/server/group_user.hpp \
+ /Chat-Server/Chat-Server/include/server/group_model.hpp \
  /Chat-Server/Chat-Server/include/public.hpp \
+ /Chat-Server/Chat-Server/include/server/user.hpp \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h
