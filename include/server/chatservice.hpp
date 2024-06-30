@@ -7,6 +7,7 @@
 #include<functional>
 #include"usermodel.hpp"
 #include"json.hpp"
+#include<mutex>
 
 using namespace muduo;
 using namespace muduo::net;
@@ -24,6 +25,8 @@ public:
     void login(const TcpConnectionPtr &conn, json &js, Timestamp);
     void reg(const TcpConnectionPtr &conn, json &js, Timestamp);
     MsgHandler getHandler(int msgid);
+    void clientCloseExceptionHandler(const TcpConnectionPtr &conn);
+    
 
 private:
     //存储消息id和业务处理方法
@@ -31,8 +34,9 @@ private:
     Chatservice(const Chatservice &) = delete;
     Chatservice(const Chatservice &&) = delete;
     Chatservice &operator=(const Chatservice &) = delete;
-
+    std::mutex _connMutex;
     unordered_map<int, MsgHandler> _msgHandlerMap;
+    unordered_map<int, TcpConnectionPtr> _useConnMap;
 
     UserModel usermodel;
 };

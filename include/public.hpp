@@ -4,8 +4,20 @@
 enum EnMsgType
 {
     LOGIN_MSG = 1,//登录
-    REG_MSG = 2,//注册
-    REG_MSG_ACK
+    LOGIN_MSG_ACK,
+    REG_MSG,//注册
+    REG_MSG_ACK,
+    ONE_CHAT_MSG
 };
+/*
+msgid
+frmo
 
+msg
+
+to
+
+
+
+*/
 #endif

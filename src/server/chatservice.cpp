@@ -31,11 +31,53 @@ MsgHandler Chatservice::getHandler(int msgid)
     }
     
 }
-
+//{"msgid":1,"id":1,"password":"123456"}
 void Chatservice::login(const TcpConnectionPtr &conn, json &js, Timestamp)
 {
     LOG_INFO << "do login service!!!";
+    int id = js["id"].get<int>();
+    string password = js["password"];
+    User user = usermodel.query(id);
+    if(user.getid()==id&&user.getpassword()==password)
+    {
+        if(user.getstate()=="online")
+        {
+            json response;
+            response["msgid"] = LOGIN_MSG_ACK;
+            response["errno"] = 2;
+            response["errmsg"]="this account is using, input another!";
+            conn->send(response.dump());
+        }
+        else{
+            {
+                lock_guard<mutex> lock(_connMutex);
+                _useConnMap.insert({id, conn});
+            }
 
+            user.setstate("online");
+            if(usermodel.update(user))
+            {
+                LOG_INFO << "update success!";
+            }
+            else{
+                LOG_INFO << "update false!";
+            }
+
+            json response;
+            response["id"] = user.getid();
+            response["name"] = user.getname();
+            response["state"] = user.getstate();
+            conn->send(response.dump());
+        }
+    }else{
+        LOG_INFO << "id false of password false!";
+        json response;
+        response["msgid"] = LOGIN_MSG_ACK;
+        response["errno"] = 2;
+        response["errmsg"]="id false of password false!";
+        conn->send(response.dump());
+
+    }
 }
 void Chatservice::reg(const TcpConnectionPtr &conn, json &js, Timestamp)
 {
@@ -61,6 +103,28 @@ void Chatservice::reg(const TcpConnectionPtr &conn, json &js, Timestamp)
         conn->send(response.dump());
     }
 
+}
+void Chatservice::clientCloseExceptionHandler(const TcpConnectionPtr &conn)
+{
+    User user;
+    {
+        lock_guard<mutex> lock(_connMutex);
+        for (auto it = _useConnMap.begin(); it != _useConnMap.end();it++)
+        {
+            if(it->second==conn)
+            {
+                user.setid(it->first);
+                _useConnMap.erase(it);
+                break;
+            }
+        }
+
+    }
+    if(user.getid()!=-1)
+    {
+        user.setstate("offline");
+        usermodel.update(user);
+    }
 }
 // void Chatservice::reg(const TcpConnectionPtr &conn, json s&j, Timestamp)
 // {

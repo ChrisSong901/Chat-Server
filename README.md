@@ -1,70 +1,8 @@
-## 数据库表设计
-# User表
-字段名称	字段类型	                字段说明	         约束
-id	        INT	                       用户id	        PRIMARY KEY、AUTO_INCREMENT
-name	    VARCHAR(50)	               用户名	        NOT NULL, UNIQUE
-password	VARCHAR(50)	               用户密码	        NOT NULL
-state	E   NUM('online', 'offline')   当前登录状态	     DEFAULT 'offline'
+## 在Linux 环境下基于muduo开发的集群聊天服务器。实现新用户注册、用户登录、添加好友、添加群组、好友通信、群组聊天、保持离线消息等功能。
 
-CREATE TABLE User (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(50) NOT NULL,
-    state ENUM('online', 'offline') DEFAULT 'offline'
-);
-
-# Friend表
-
-字段名称	字段类型	字段说明	        约束
-userid	    INT	        用户id	    NOT NULL、联合主键
-friendid	INT	        好友id	    NOT NULL、联合主键
-
-CREATE TABLE Friend(
-    userid INT NOT NULL,
-    friendid INT NOT NULL,
-    PRIMARY KEY (userid,friendid)
-    );
-
-# AllGroup
-
-字段名称	字段类型	    字段说明	        约束
-id	        INT	            组id	        PRIMARY KEY、AUTO_INCREMENT
-groupname	VARCHAR(50)	    组名称	        NOT NULL, UNIQUE
-groupdesc	VARCHAR(200)	组功能描述	    DEFAULT ''
-
-
-CREATE TABLE AllGroup (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    groupname VARCHAR(50) NOT NULL UNIQUE,
-    groupdesc VARCHAR(200) DEFAULT ''
-);
-
-
-# GroupUser表
-
-字段名称	    字段类型	                字段说明	        约束
-groupid	        INT	                        组id	        NOT NULL、联合主键
-userid	        INT	                        组员id	        NOT NULL、联合主键
-grouprole	    ENUM('creator', 'normal')	组内角色	    DEFAULT 'normal'
-
-
-CREATE TABLE GroupUser (
-    groupid INT NOT NULL,
-    userid INT NOT NULL,
-    grouprole ENUM('creator', 'normal') DEFAULT 'normal',
-    PRIMARY KEY (groupid, userid)
-);
-
-
-# OfflineMessage表
-
-字段名称	    字段类型	    字段说明	                    约束
-userid	        INT	            用户id	                    NOT NULL
-message	        VARCHAR(50)	    离线消息（存储Json字符串）	  NOT NULL
-
-CREATE TABLE OfflineMessage (
-    userid INT NOT NULL,
-    message VARCHAR(50) NOT NULL,
-    PRIMARY KEY (userid)
-);
-
+基于muduo网络库开发网络核心模块，实现高效通信  
+使用第三方JSON库实现通信数据的序列化和反序列化  
+使用 Nginx的TCP负载均衡功能，将客户端请求分派到多个服务器上，以提高并发处理能力  
+基于发布-订阅的服务器中间件redis消息队列，解决跨服务器通信难题  
+封装MySQL接口，将用户数据储存到磁盘中，实现数据持久化  
+基于CMake构建项目  

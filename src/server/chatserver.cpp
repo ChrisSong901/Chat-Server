@@ -28,7 +28,10 @@ void ChatServer::start()
 
 void ChatServer::onConnection(const TcpConnectionPtr &conn)
 {
-
+    if(!conn->connected())
+    {
+        Chatservice::instance()->clientCloseExceptionHandler(conn);
+    }
 }
 
 void ChatServer::onMessage(const TcpConnectionPtr &conn, // 连接
