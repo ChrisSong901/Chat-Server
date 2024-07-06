@@ -79,3 +79,21 @@ OfflineMessage表
             message VARCHAR(50) NOT NULL,
             PRIMARY KEY (userid)
         );
+
+## 网络模块
+Muduo采用了"one loop per thread + thread pool"的架构设计，即每个线程与一个事件循环(EventLoop)相对应，而这个事件循环则构成了一个Reactor模式的实例。在Muduo的上下文中，其Reactor模型被细化为主从Reactor模式，其中包含一个mainReactor和若干个subReactor。具体而言，mainReactor负责监听并接收新的连接请求，一旦有新连接到来，mainReactor会将其移交给subReactor进行后续的连接管理和数据传输处理。
+
+![reactor](https://github.com/ChrisSong901/Chat-Server/assets/172186531/37dae97b-a2bf-4ad7-898f-93eb34a54224)
+
+使用 muduo 注册消息事件到来的回调函数，并根据得到的 MSGID 定位到不同的处理函数中。以此实现业务模块和网络模块的解耦。
+
+        void ChatServer::onMessage(const TcpConnectionPtr &conn, // 连接
+                                   Buffer *buffer,               // 缓冲区
+                                   Timestamp time)               // 时间信息
+        {
+            string buf = buffer->retrieveAllAsString();
+            json js = json::parse(buf);
+            auto msgHandler= Chatservice::instance()->getHandler(js["msgid"].get<int>());
+            LOG_INFO << "begining!";
+            msgHandler(conn, js, time);
+        }
