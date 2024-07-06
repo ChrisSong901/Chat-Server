@@ -26,6 +26,6 @@
 # 执行脚本构建项目
         ./build.sh
 
-![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/d%3A/desttop/chat_server_test/success.png?version%3D1720236050145)
+![Alt text]img/success.png
 
 
