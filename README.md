@@ -28,4 +28,7 @@
 
 ![success](https://github.com/ChrisSong901/Chat-Server/assets/172186531/58bdae2e-5d61-4aa2-ae04-d217a5e456e8)
 
-
+# 执行可执行文件
+        #服务端
+        cd ./bin
+        ./ChatServer 6000 
