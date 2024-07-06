@@ -26,9 +26,13 @@
 # 执行脚本构建项目
         ./build.sh
 
-![success](https://github.com/ChrisSong901/Chat-Server/assets/172186531/58bdae2e-5d61-4aa2-ae04-d217a5e456e8)
 
 # 执行可执行文件
         #服务端
         cd ./bin
         ./ChatServer 6000 
+
+        #启动客户端
+        ./ChatClient 127.0.0.1 8000
+
+![success](https://github.com/ChrisSong901/Chat-Server/assets/172186531/11cc3c4f-6f59-43ec-92b8-a19a2a37e688)
