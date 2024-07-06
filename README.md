@@ -17,7 +17,7 @@
 
 # 构建项目
 
-创建数据库
+# 创建数据库
         连接MySQL
          mysql -u root -p your passward
         创建数据库
