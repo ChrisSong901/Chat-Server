@@ -36,3 +36,14 @@
         ./ChatClient 127.0.0.1 8000
 
 ![success](https://github.com/ChrisSong901/Chat-Server/assets/172186531/11cc3c4f-6f59-43ec-92b8-a19a2a37e688)
+
+## 项目讲解
+
+# 创建数据库表
+        #User表
+        CREATE TABLE User (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            name VARCHAR(50) NOT NULL UNIQUE,
+            password VARCHAR(50) NOT NULL,
+            state ENUM('online', 'offline') DEFAULT 'offline'
+        );
