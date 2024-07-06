@@ -26,6 +26,6 @@
 # 执行脚本构建项目
         ./build.sh
 
-![Alt text]img/success.png
+![success](https://github.com/ChrisSong901/Chat-Server/assets/172186531/58bdae2e-5d61-4aa2-ae04-d217a5e456e8)
 
 
