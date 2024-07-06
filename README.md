@@ -134,4 +134,5 @@ Muduo采用了"one loop per thread + thread pool"的架构设计，即每个线�
 ![nginx_conf](https://github.com/ChrisSong901/Chat-Server/assets/172186531/96514a19-26fc-4256-ad7a-7e1b8b5766de)
 
 配置好后，重新加载配置文件启动。
+
         /usr/local/nginx/sbin/nginx -s reload
