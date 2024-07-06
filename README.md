@@ -40,7 +40,7 @@
 ## 项目讲解
 
 # 创建数据库表
-        #User表
+User表
         CREATE TABLE User (
             id INT PRIMARY KEY AUTO_INCREMENT,
             name VARCHAR(50) NOT NULL UNIQUE,
