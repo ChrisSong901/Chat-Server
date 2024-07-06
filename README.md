@@ -18,9 +18,9 @@
 # 构建项目
 
 创建数据库
-        # 连接MySQL
+        连接MySQL
         mysql -u root -p your passward
-        # 创建数据库
+        创建数据库
         create database chat;
 
 # 执行脚本构建项目
