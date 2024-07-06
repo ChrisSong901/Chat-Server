@@ -1,9 +1,31 @@
+## Chat-Server
 在 Linux 环境下基于 muduo 开发的集群聊天服务器。实现新用户注册、用户登录、添加好友、添加群组、好友通信、群组聊天、保持离线消息等功能。
 
-项目特点
-基于 muduo 网络库开发网络核心模块，实现高效通信  
-使用第三方 JSON 库实现通信数据的序列化和反序列化  
-使用 Nginx 的 TCP 负载均衡功能，将客户端请求分派到多个服务器上，以提高并发处理能力  
+# 项目特点
+基于muduo网络库开发网络核心模块，实现高效通信  
+使用第三方JSON库实现通信数据的序列化和反序列化  
+使用Nginx的TCP负载均衡功能，将客户端请求分派到多个服务器上，以提高并发处理能力  
 基于发布-订阅的服务器中间件redis消息队列，解决跨服务器通信难题  
-封装 MySQL 接口，将用户数据储存到磁盘中，实现数据持久化  
-基于 CMake 构建项目  
+封装MySQL接口，将用户数据储存到磁盘中，实现数据持久化  
+基于CMake构建项目  
+
+# 项目环境
+* boost库
+* muduo库
+* Nginx
+* redis
+
+# 构建项目
+
+创建数据库
+        # 连接MySQL
+        mysql -u root -p your passward
+        # 创建数据库
+        create database chat;
+
+# 执行脚本构建项目
+        ./build.sh
+
+![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/d%3A/desttop/chat_server_test/success.png?version%3D1720236050145)
+
+

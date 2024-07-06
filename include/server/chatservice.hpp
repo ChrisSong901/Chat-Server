@@ -13,6 +13,8 @@
 #include"group.hpp"
 #include"group_user.hpp"
 #include"group_model.hpp"
+
+#include"redis.hpp"
 using namespace muduo;
 using namespace muduo::net;
 
@@ -40,7 +42,7 @@ public:
     // 群组聊天业务
     void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp);
     
-    
+    void redis_subscribe_message_handler(int channel, string message);
 
     // 服务端异常终止之后的操作
     void reset();
@@ -60,6 +62,8 @@ private:
     OfflineMessageModel offlineMsgModel;
     FriendModel friendmodel;
     GroupModel groupmodel;
+
+    Redis _redis;
 
 };
 

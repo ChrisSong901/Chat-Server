@@ -21,6 +21,11 @@ Chatservice::Chatservice()
     _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&Chatservice::createGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&Chatservice::addGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&Chatservice::groupChat, this, _1, _2, _3)});
+
+    if(_redis.connect())
+    {
+        _redis.init_notify_handler(std::bind(&Chatservice::redis_subscribe_message_handler, this, _1, _2));
+    }
 }
 
 MsgHandler Chatservice::getHandler(int msgid)
@@ -60,7 +65,7 @@ void Chatservice::login(const TcpConnectionPtr &conn, json &js, Timestamp)
                 lock_guard<mutex> lock(_connMutex);
                 _useConnMap.insert({id, conn});
             }
-
+            _redis.subscribe(id);
             user.setstate("online");
             usermodel.update(user);
 
@@ -148,7 +153,8 @@ void Chatservice::clientCloseExceptionHandler(const TcpConnectionPtr &conn)
         }
 
     }
-    if(user.getid()!=-1)
+    _redis.unsubscribe(user.getid());
+    if (user.getid() != -1)
     {
         user.setstate("offline");
         usermodel.update(user);
@@ -162,12 +168,19 @@ void Chatservice::OneChat(const TcpConnectionPtr &conn, json &js, Timestamp)
         auto it = _useConnMap.find(toid);
         if(it!=_useConnMap.end())
         {
-            it->second->send(js["msg"].dump());
+            it->second->send(js.dump());
             return;
         }
     }
-    //不在线
-    offlineMsgModel.insert(toid,js["msg"].dump());
+     User user = usermodel.query(toid);
+
+     if (user.getstate() == "online")
+     {
+         _redis.publish(toid, js.dump());
+         return;
+     }
+         // 不在线
+    offlineMsgModel.insert(toid, js.dump());
 }
 void Chatservice::reset()
 {
@@ -215,7 +228,29 @@ void Chatservice::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp)
             it->second->send(js.dump());
         }
         else{
-            offlineMsgModel.insert(id, js.dump());
+            User user = usermodel.query(id);
+
+            if(user.getstate() == "online")
+             {
+                 _redis.publish(id, js.dump());
+            }
+            else{
+                 offlineMsgModel.insert(id, js.dump());
+            }
+           
         }
     }
+}
+
+void Chatservice::redis_subscribe_message_handler(int userid,string msg)
+{
+    lock_guard<mutex> lock(_connMutex);
+    auto it = _useConnMap.find(userid);
+    if(it!=_useConnMap.end())
+    {
+        it->second->send(msg);
+        return;
+    }
+
+    offlineMsgModel.insert(userid, msg);
 }
