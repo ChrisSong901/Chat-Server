@@ -48,3 +48,34 @@ User表
             password VARCHAR(50) NOT NULL,
             state ENUM('online', 'offline') DEFAULT 'offline'
         );
+Friend表
+
+        CREATE TABLE Friend (
+            userid INT NOT NULL,
+            friendid INT NOT NULL,
+            PRIMARY KEY (userid, friendid)
+        );
+
+AllGroup表
+
+        CREATE TABLE AllGroup (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            groupname VARCHAR(50) NOT NULL UNIQUE,
+            groupdesc VARCHAR(200) DEFAULT ''
+        );
+GroupUser表
+
+        CREATE TABLE GroupUser (
+            groupid INT NOT NULL,
+            userid INT NOT NULL,
+            grouprole ENUM('creator', 'normal') DEFAULT 'normal',
+            PRIMARY KEY (groupid, userid)
+        );
+
+OfflineMessage表
+
+        CREATE TABLE OfflineMessage (
+            userid INT NOT NULL,
+            message VARCHAR(50) NOT NULL,
+            PRIMARY KEY (userid)
+        );
